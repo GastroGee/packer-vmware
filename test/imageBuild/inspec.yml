@@ -1,0 +1,12 @@
+name: imageBuild
+title: InSpec Profile
+maintainers: Gastro Gee
+copyright: Gastro Gee
+copyright_email: sksegha@gmail.com 
+license: Apache-2.0
+summary: An Inspec Compliance Profile to test Ubuntu VMware Template
+supports:
+    platform: Ubuntu 20.04
+
+    
+
