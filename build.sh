@@ -36,8 +36,8 @@ task=${1:-}
 [[ "${1}" == "deploy" ]] || [[ "${1}" == "debug" ]] || help
 
 ## Validate variables in build.conf
-[[ -f ${build.conf }]] || { echo "User variables file '${build.conf}' not found"; exit 1; }
-source ${build.conf}
+[[ -f $build_conf }]] || { echo "User variables file '$build_conf' not found"; exit 1; }
+source $build_conf
 
 [[ -z "${vcenter_server}" ]] && missing_var "vcenter_server"
 [[ -z "${datastore}" ]] && missing_var "datastore"
@@ -89,7 +89,7 @@ case ${task} in
 esac
 
 ## Remove Files with Passwords
-[[ -f http/preseed.cfg ]] || && printf "removing preseed file" && rm -v http/preseed.cfg
+[[ -f http/preseed.cfg ]] && printf "removing preseed file" && rm -v http/preseed.cfg
 
 exit ${status}
 

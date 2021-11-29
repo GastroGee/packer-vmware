@@ -103,7 +103,7 @@ source "vsphere-iso" "Dev" {
     "disk.EnableUUID" = true
   }
   network_adapters {
-    network      = var.Devnetwork
+    network      = var.network
     network_card = "vmxnet3"
   }
   password      = var.vcenter_password
