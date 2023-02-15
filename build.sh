@@ -36,7 +36,7 @@ task=${1:-}
 [[ "${1}" == "deploy" ]] || [[ "${1}" == "debug" ]] || help
 
 ## Validate variables in build.conf
-[[ -f $build_conf }]] || { echo "User variables file '$build_conf' not found"; exit 1; }
+[[ -f $build_conf ]] || { echo "User variables file '$build_conf' not found"; exit 1; }
 source $build_conf
 
 [[ -z "${vcenter_server}" ]] && missing_var "vcenter_server"
@@ -57,7 +57,7 @@ if [[ -z "${ssh_password}" ]]; then
         printf "\n"
         read -srp "Enter new SSH Password: " ssh_password2
         printf "\n"
-        [ "${ssh_password}" = "${ssh_password2}"] && break
+        [ "${ssh_password}" = "${ssh_password2}" ] && break
         printf "Passwords do not match. Try again! \n\n"
     done
 fi 
